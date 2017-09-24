@@ -1,0 +1,43 @@
+<div class="shield-chat">
+	<div class="modal-header">
+		<button type="button" class="close pull-right" ng-click="$dismiss()" aria-hidden="true">&times;</button>
+		<h4 class="modal-title">Chat</h4>
+	</div>
+	<div class="modal-body">
+        <div class="col-sm-12 frame">
+            <ul>
+                <li style="width:100%">
+                    <div class="msj macro">
+                        <div class="avatar"><img class="img-circle" style="width:100%;" src="/assets/icons/avatar.svg" /></div>
+                        <div class="text text-l">
+                            <p>Hey there</p>
+                            <p><small>10:55AM</small></p>
+                            </div>
+                        </div>
+                    </li>
+
+                <li style="width:100%;">
+                <div class="msj-rta macro" style="margin-bottom: 15px;">
+                    <div class="text text-r">
+                        <p>Hey</p>
+                        <p><small>10:55AM</small></p>
+                    </div>
+
+                    <div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="img-circle" style="width:100%;" src="/assets/icons/avatar.svg" /></div>
+                </div>
+                </li>
+            </ul>
+            <div>
+                <div class="macro" style="margin:auto">
+                    <div class="text text-r" style="background:white !important; margin-top: 5px;">
+                        <input class="mytext" placeholder="Type a message"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="modal-footer">
+		<button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
+		<button type="button" class="btn btn-primary">Save changes</button>
+	</div>
+</div>
