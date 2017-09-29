@@ -51,3 +51,4 @@ yo cg-angular:service my-service
 yo cg-angular:filter my-filter
 yo cg-angular:module my-module
 yo cg-angular:modal my-modal
+
