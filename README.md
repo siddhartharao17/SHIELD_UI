@@ -3,7 +3,7 @@
 
 Go to https://github.com/cgross/generator-cg-angular to install required componets (Getting Started)
 
-Directory Layout
+Directory Layout 
 
 app.less ....................... main app-wide styles
 app.js ......................... angular module initialization and route setup
