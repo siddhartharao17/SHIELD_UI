@@ -10,6 +10,10 @@ angular.module('shield').config(function($stateProvider, $urlRouterProvider) {
         url: '/dashboard',
         templateUrl: 'partial/dashboard-partial/dashboard-partial.html'
     });
+    $stateProvider.state('faq-partial', {
+        url: '/faq',
+        templateUrl: 'partial/faq-partial/faq-partial.html'
+    });
     /* Add New States Above */
     $urlRouterProvider.otherwise('/home');
 

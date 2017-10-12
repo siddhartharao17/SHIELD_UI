@@ -32,7 +32,16 @@ angular.module('shield').factory('shieldService',function($http, $q, urlService)
             deferred.resolve(data);
         }).error(deferred.reject);
         return deferred.promise;
-    }
+    };
+
+    shieldService.deleteProfile = function($params) {
+        let deferred = $q.defer();
+        $http.post(urlService.deleteUser, $params)
+            .success((data) => {
+            deferred.resolve(data);
+        }).error(deferred.reject);
+        return deferred.promise;
+    };
 
     return shieldService;
 });

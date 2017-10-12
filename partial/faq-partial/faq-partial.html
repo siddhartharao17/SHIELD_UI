@@ -1,0 +1,11 @@
+<div class="col-md-12" ng-controller="FaqPartialCtrl">
+    <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <ul>
+            <li ng-repeat="faq in faqs">
+                <h2>{{ faq.text }}</h2>
+                <p>{{faq.answer}}</p>
+            </li>
+        </ul>
+    </div>
+</div>
