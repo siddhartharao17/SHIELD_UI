@@ -8,8 +8,9 @@ angular.module('shield').controller('LoginPartialCtrl',function($scope, shieldSe
         });
         shieldService.login(dataToSend).then(function (data) {
             if(data){
-                $cookies.put('username', data.username);
-                $cookies.put('u_id', data.u_id);
+                // $cookies.put('username', data.message);
+                // console.log(data.message);
+                $cookies.put('u_id', data.message.u_id);
                 $state.go('dashboard-partial');
             }
         });
