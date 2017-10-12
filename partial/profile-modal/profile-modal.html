@@ -1,0 +1,51 @@
+
+	<!--<div class="modal-header">-->
+		<!--<button type="button" class="close pull-right" ng-click="$dismiss()" aria-hidden="true">&times;</button>-->
+		<!--<h4 class="modal-title">Modal title</h4>-->
+	<!--</div>-->
+	<!--<div class="modal-body">-->
+		<!--<p>Body&hellip;</p>-->
+	<!--</div>-->
+	<!--<div class="modal-footer">-->
+		<!--<button class="btn btn-default" ng-click="$dismiss()">Cancel</button>-->
+		<!--<button type="button" class="btn btn-primary">Save changes</button>-->
+	<!--</div>-->
+
+
+
+<!-- Modal -->
+<div>
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header login-header">
+                <button type="button" class="close" ng-click="$dismiss()">×</button>
+                <h4 class="modal-title">Profile</h4>
+            </div>
+            <div class="modal-body">
+                <input type="text" placeholder="First Name" name="fname" ng-model="first_name">
+                <input type="text" placeholder="Last Name" name="lname" ng-model="last_name">
+                <input type="text" placeholder="Username" name="username" ng-model="username" ng-disabled="true">
+                <input type="text" placeholder="address" name="address" ng-model="address">
+                <input type="text" placeholder="street" name="street" ng-model="street">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <input type="text" placeholder="state" name="state" ng-model="state">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" placeholder="country" name="country" ng-model="country">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" placeholder="zip" name="zip" ng-model="zip">
+                    </div>
+                </div>
+
+                <textarea placeholder="Desicrption"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="cancel" ng-click="$dismiss()">Close</button>
+                <button type="button" class="add-project" ng-click="save()">Save</button>
+            </div>
+        </div>
+
+
+</div>

@@ -20,4 +20,14 @@ angular.module('shield').controller('DashboardPartialCtrl',function($scope, shie
             //do something with the result
         });
     }
+
+    $scope.openProfile = function () {
+
+        $uibModal.open({
+            templateUrl: 'partial/profile-modal/profile-modal.html',
+            controller: 'ProfileModalCtrl'
+        }).result.then(function(result){
+            //do something with the result
+        });
+    }
 });
