@@ -17,7 +17,7 @@ angular.module('shield').factory('shieldService',function($http, $q, $cookies, u
         var deferred = $q.defer();
         $http.get(urlService.dashLogUrl).
         success(function (data) {
-//			    console.log("Sucess ");
+			    console.log(data.message);
             deferred.resolve(data);
         }).error(deferred.reject);
         return deferred.promise;

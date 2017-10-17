@@ -7,7 +7,8 @@ angular.module('shield').controller('DashboardPartialCtrl',function($scope, shie
     });
 
     shieldService.getProfile().then(function (data) {
-        console.log(data);
+        // console.log(data);
+        $scope.profileData = data.message;
     });
 
 
