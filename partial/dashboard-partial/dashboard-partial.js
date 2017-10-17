@@ -3,7 +3,7 @@ angular.module('shield').controller('DashboardPartialCtrl',function($scope, shie
     shieldService.getLogs().then(function (data) {
         //console.log(data);
 
-        $scope.logsData = data;
+        $scope.logsData = data.message;
     });
 
     shieldService.getProfile().then(function (data) {
