@@ -14,6 +14,7 @@ angular.module('shield').controller('ProfileModalCtrl',function($scope, $cookies
             $scope.country = data.message.country;
             $scope.zip = data.message.zip;
             $scope.username = data.message.username;
+            $scope.contact_number = data.message.contact_number;
         }
     });
 
@@ -27,7 +28,8 @@ angular.module('shield').controller('ProfileModalCtrl',function($scope, $cookies
             country : $scope.country,
             zip : $scope.zip,
             username : $scope.username,
-            u_id : $cookies.get('u_id')
+            u_id : $cookies.get('u_id'),
+            contact_number : $scope.contact_number
         }
 
         shieldService.createUpdateProfile(dataToSend).then(function (data) {
