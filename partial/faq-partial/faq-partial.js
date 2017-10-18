@@ -9,6 +9,6 @@ angular.module('shield').controller('FaqPartialCtrl',function($scope){
         {text: 'What device does Shield support?', answer: 'As of current iteration, Shield is only supported for Windows'},
         {text: 'What information is shared if I register using my Facebook account?', answer: 'Just your basic information such as name and date of birth'},
         {text: 'How do I update my phone number ?', answer: 'Please log into your account and go to the edit profile page'},
-        {text: 'What is Shield?', answer: 'Good question.'}
+        {text: 'What is Shield?', answer: 'SHIELD is a device intrusion detection and prevention system. '}
     ];
 });
