@@ -31,4 +31,14 @@ angular.module('shield').controller('DashboardPartialCtrl',function($scope, shie
             //do something with the result
         });
     }
+
+     $scope.displayFaqs = function () {
+
+        $uibModal.open({
+            templateUrl: 'partial/faq-partial/faq-partial.html',
+            controller: 'FaqPartialCtrl'
+        }).result.then(function(result){
+            //do something with the result
+        });
+    }
 });
