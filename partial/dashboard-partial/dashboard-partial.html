@@ -67,6 +67,9 @@
                                                     <div class="divider">
                                                     </div>
                                                     <a class="view btn-sm active" ng-click="openProfile()">View Profile</a>
+                                                    <div class="divider">
+                                                    </div>
+                                                    <a class="active" ng-click="changePassword()">Change Password</a>
                                                 </div>
                                             </li>
                                         </ul>
@@ -125,7 +128,7 @@
                                 <div class="table-container">
                                     <table class="table table-filter">
                                         <tbody>
-                                            <tr ng-repeat="log in logsData" data-status="pagado">
+                                            <tr ng-repeat="log in logsData track by $index" data-status="pagado">
                                                 <td>
                                                     <div class="media">
                                                         <a class="pull-left">

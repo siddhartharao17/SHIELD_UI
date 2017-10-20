@@ -1,4 +1,4 @@
-angular.module('shield').factory('shieldService',function($http, $q, $cookies, urlService) {
+angular.module('shield').factory('shieldService',function($http, $q, $cookies, ngToast, urlService) {
 
     var shieldService = {};
 
@@ -13,11 +13,22 @@ angular.module('shield').factory('shieldService',function($http, $q, $cookies, u
         return deferred.promise;
     };
 
+    shieldService.changePass = function ($params) {
+        var deferred = $q.defer();
+        $http.post(urlService.changePassUrl, $params).
+        success(function (data) {
+//			console.log("Sucess ");
+            deferred.resolve(data);
+        }).error(deferred.reject);
+
+        return deferred.promise;
+    };
+
     shieldService.getLogs = function () {
         var deferred = $q.defer();
         $http.get(urlService.dashLogUrl).
         success(function (data) {
-			    console.log(data.message);
+            console.log(data.message);
             deferred.resolve(data);
         }).error(deferred.reject);
         return deferred.promise;
@@ -39,7 +50,6 @@ angular.module('shield').factory('shieldService',function($http, $q, $cookies, u
         var deferred = $q.defer();
         $http.post(urlService.createUpdateProfileUrl, dataToSend).
         success(function (data) {
-//			    console.log("Sucess ");
             deferred.resolve(data);
         }).error(deferred.reject);
         return deferred.promise;

@@ -4,6 +4,7 @@ angular.module('shield').factory('urlService',function($cookies) {
     var urlService = {};
 
     urlService.loginUrl = baseUrl + '/api_login/';
+    urlService.changePassUrl = baseUrl + '/change_pass';
     urlService.dashLogUrl = baseUrl + '/getKeylogData/' + $cookies.get('u_id');
     urlService.profileUrl = baseUrl + '/get_profile/' + $cookies.get('u_id');
     urlService.loginUrl = baseUrl + '/api_login';

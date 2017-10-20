@@ -30,7 +30,7 @@ angular.module('shield').controller('DashboardPartialCtrl',function($scope, shie
         }).result.then(function(result){
             //do something with the result
         });
-    }
+    };
 
      $scope.displayFaqs = function () {
 
@@ -40,5 +40,14 @@ angular.module('shield').controller('DashboardPartialCtrl',function($scope, shie
         }).result.then(function(result){
             //do something with the result
         });
-    }
+    };
+
+     $scope.changePassword = function () {
+         $uibModal.open({
+             templateUrl: 'partial/change-pass-modal/change-pass-modal.html',
+             controller: 'ChangePassModalCtrl'
+         }).result.then(function(result){
+             //do something with the result
+         });
+     };
 });

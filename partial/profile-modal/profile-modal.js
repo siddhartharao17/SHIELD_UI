@@ -1,4 +1,4 @@
-angular.module('shield').controller('ProfileModalCtrl',function($scope, $cookies, shieldService){
+angular.module('shield').controller('ProfileModalCtrl',function($scope, $cookies, shieldService, ngToast){
 
     shieldService.getProfile().then(function (data) {
         if(data){
@@ -19,6 +19,7 @@ angular.module('shield').controller('ProfileModalCtrl',function($scope, $cookies
     });
 
     $scope.save = function () {
+      //  ngToast.create('Your Profile Has Been Updated!');
         var dataToSend  = {
             first_name : $scope.first_name,
             last_name : $scope.last_name,
@@ -34,7 +35,9 @@ angular.module('shield').controller('ProfileModalCtrl',function($scope, $cookies
 
         shieldService.createUpdateProfile(dataToSend).then(function (data) {
             console.log(data);
+            ngToast.create('Your Profile Has Been Updated!');
         });
+        ngToast.create('Your Profile Has Been Updated!');
     };
 
 

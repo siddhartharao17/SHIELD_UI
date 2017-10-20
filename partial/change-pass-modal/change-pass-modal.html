@@ -1,0 +1,20 @@
+<!-- Modal -->
+<div>
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header login-header">
+            <button type="button" class="close" ng-click="$dismiss()">×</button>
+            <h4 class="modal-title">Change Password</h4>
+        </div>
+        <div class="modal-body" >
+                <input type="password" placeholder="Old Password" name="old_pass" ng-model="old_pass">
+                <input type="password" placeholder="New Password" name="new_pass" ng-model="new_pass">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="cancel" ng-click="$dismiss()">Close</button>
+            <button type="button" class="add-project" ng-click="changePass()">Change</button>
+        </div>
+    </div>
+
+
+</div>
