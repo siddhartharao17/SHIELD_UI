@@ -1,0 +1,73 @@
+<div>
+	<div class="modal-header login-header" >
+        <script type="text/javascript"
+        src="bower_components/angular-payments/lib/angular-payments.js">
+        </script>
+		<button type="button" class="close pull-right" ng-click="$dismiss()" aria-hidden="true">&times;</button>
+		<h4 class="modal-title"><i class="fa fa-credit-card" aria-hidden="true"></i> Add a payment method</h4>
+	</div>
+
+
+    <div class="col-sm-13 frame">
+    <fieldset ng-disabled="buttonval" ng-init="buttonval=true">
+    <form novalidate name="paymentForm" style="margin:20px;">
+    <div class="form-row parent">
+    <div class="col-xs-6">
+    <input type="text" name="creditCard" ng-model="ccinfo.cc_number" required data-credit-card-type data-ng-pattern="/^[0-9]+$/" data-ng-minlength="15" maxlength="19" placeholder="Card number" class="form-control">
+    </div>
+    <i class="{{ccinfo.classname}}" aria-hidden="true" style="font-size:36px;"></i>
+    </div>
+      <ul class = "listclass" ng-show="paymentForm.submitAttempt||paymentForm.creditCard.$touched && !paymentForm.$valid">
+      <li ng-show="paymentForm.creditCard.$error.minlength">Credit card must be 15-19 digits</li>
+      <li ng-show="paymentForm.creditCard.$error.pattern">Credit card must consist of only numbers</li>
+      <li ng-show="paymentForm.creditCard.$error.invalid">Credit card must be a valid Amex, Visa, Discover, or Master Card</li>
+      <li ng-show="paymentForm.creditCard.$error.required">Credit card number is required</li>
+      </ul>
+        <br/>
+    <div class="form-row parent">
+    <div class="col-xs-2">
+    <input type="password" name="securityCode" ng-model="ccinfo.security_code" placeholder="CCV" required data-ng-pattern="/^[0-9]+$/" data-ng-minlength="3" maxlength="4" class="form-control">
+    <ul class = "listclass" ng-show="paymentForm.submitAttempt ||paymentForm.securityCode.$touched && !paymentForm.$valid">
+      <li ng-show="paymentForm.securityCode.$error.pattern">Security code must contain only numbers</li>
+      <li ng-show="paymentForm.securityCode.$error.minlength">Security code must be 3-4 digits</li>
+      <li ng-show="paymentForm.securityCode.$error.required">Security code required</li>
+    </ul>
+    </div>
+    <div class="col-xs-2" style="margin-left:35px;">
+    <input type="text" ng-model="ccinfo.month" name="month" data-card-expiration required placeholder="MM" data-ng-pattern="/^[0-9]+$/" data-ng-minlength="1" maxlength="2" class="form-control">
+    <ul class = "listclass" ng-show="paymentForm.submitAttempt ||paymentForm.month.$touched && !paymentForm.$valid">
+      <li ng-show="paymentForm.month.$error.required">Expiration month required</li>
+      <li ng-show="paymentForm.month.$error.pattern">Month must contain only numbers</li>
+    </ul>
+    </div>
+    <p class="para">/</p>
+    <div class="col-xs-2" >
+    <input type="text" ng-model="ccinfo.year" name="year" required placeholder="YYYY" maxlength="4" class="form-control" data-ng-pattern="/^[0-9]+$/">
+     <ul class = "listclass" ng-show="paymentForm.submitAttempt ||paymentForm.year.$touched && !paymentForm.$valid">
+      <li ng-show="paymentForm.year.$error.required">Expiration year required</li>
+      <li ng-show="paymentForm.year.$error.pattern">Year must contain only numbers</li>
+      <li ng-show="paymentForm.month.$error.invalid">Provided expiration date is invalid</li>
+    </ul>
+    </div>
+    </div>
+    <div class="form-row parent">
+    <div class="col-xs-7">
+    <input type="text" name="holderName" ng-model="ccinfo.cc_name" required  placeholder="Cardholder name" class="form-control">
+    </div>
+    </div>
+    <ul class = "listclass" ng-show="paymentForm.submitAttempt||paymentForm.holderName.$touched && !paymentForm.$valid">
+    <li ng-show="paymentForm.holderName.$error.required">Cardholder name is required</li>
+    </ul>
+    </form>
+    </fieldset>
+	</div>
+
+    </div>
+	<div class="modal-footer ">
+         <div class="col-sm-8 frame">
+	      <button type="button" class="add-project" ng-click="buttonval=false">Edit</button>
+          <button ng-click="paymentForm.submitAttempt=true;save(ccinfo)" type="submit" class="add-project">Save</button>
+          <button type="button" class="cancel" ng-click="$dismiss()">Cancel</button>
+         </div>
+	</div>
+</div>
