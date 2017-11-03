@@ -1,6 +1,6 @@
 angular.module('shield').controller
   ( 'PaymentModalCtrl'
-  , function($scope, $locale, shieldService, ngToast) {
+  , function($scope, $locale,$cookies, shieldService, ngToast) {
       $scope.currentYear = new Date().getFullYear()
       $scope.currentMonth = new Date().getMonth() + 1
       $scope.months = $locale.DATETIME_FORMATS.MONTH
@@ -8,9 +8,10 @@ angular.module('shield').controller
 
       $scope.save = function(data){
         if ($scope.paymentForm.$valid){
-        console.log(data)
+       // console.log(data)
            // send json data
          var dataToSend  = {
+            u_id : $cookies.get('u_id'),
             cc_number : $scope.ccinfo.cc_number,
             cc_type : $scope.ccinfo.cc_type,
             security_code : $scope.ccinfo.security_code,
