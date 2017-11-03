@@ -14,6 +14,10 @@ angular.module('shield').config(function($stateProvider, $urlRouterProvider) {
         url: '/faq',
         templateUrl: 'partial/faq-partial/faq-partial.html'
     });
+    $stateProvider.state('payment-modal', {
+        url: '/partial/',
+        templateUrl: 'partial/payment-modal/payment-modal.html'
+    });
     /* Add New States Above */
     $urlRouterProvider.otherwise('/home');
 

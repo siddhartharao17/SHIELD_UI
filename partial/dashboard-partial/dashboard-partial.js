@@ -50,4 +50,12 @@ angular.module('shield').controller('DashboardPartialCtrl',function($scope, shie
              //do something with the result
          });
      };
+      $scope.openPayments = function () {
+        $uibModal.open({
+            templateUrl: 'partial/payment-modal/payment-modal.html',
+            controller: 'PaymentModalCtrl'
+        }).result.then(function(result){
+            //do something with the result
+        });
+    };
 });

@@ -54,6 +54,14 @@ angular.module('shield').factory('shieldService',function($http, $q, $cookies, n
         }).error(deferred.reject);
         return deferred.promise;
     };
+    shieldService.createUpdatePayments = function (dataToSend) {
+        var deferred = $q.defer();
+        $http.post(urlService.createUpdatePaymentsUrl, dataToSend).
+        success(function (data) {
+            deferred.resolve(data);
+        }).error(deferred.reject);
+        return deferred.promise;
+    };
 
     return shieldService;
 });
