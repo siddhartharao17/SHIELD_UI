@@ -1,16 +1,35 @@
-<div>
+<div >
 	<div class="modal-header login-header" >
         <script type="text/javascript"
         src="bower_components/angular-payments/lib/angular-payments.js">
         </script>
 		<button type="button" class="close pull-right" ng-click="$dismiss()" aria-hidden="true">&times;</button>
-		<h4 class="modal-title"><i class="fa fa-credit-card" aria-hidden="true"></i> Add a payment method</h4>
+		<h4 class="modal-title col-xs-10"><i class="fa fa-credit-card" aria-hidden="true"></i> Add a payment method</h4>
 	</div>
 
 
-    <div class="col-sm-13 frame">
+    <div class="frame maindivcredit">
     <fieldset ng-disabled="buttonval" ng-init="buttonval=true">
+
     <form novalidate name="paymentForm" style="margin:20px;">
+    <div class="form-row parent ">
+    <label>Payment Plan</label>
+    </div>
+        <br/>
+        <div class="form-row parent">
+           <div class="col-xs-5">
+            <select class="form-control">
+              <option default></option>
+              <option value="1000">Basic($1000/year)</option>
+              <option value="2000">Premium($2000/year)</option>
+            </select>
+           </div>
+        </div>
+        <hr>
+        <div class="form-row parent">
+      <label>Credit Card Details</label>
+        </div>
+        <br/>
     <div class="form-row parent">
     <div class="col-xs-6">
     <input type="text" name="creditCard" ng-model="ccinfo.cc_number" required data-credit-card-type data-ng-pattern="/^[0-9]+$/" data-ng-minlength="15" maxlength="19" placeholder="Card number" class="form-control">
@@ -19,8 +38,8 @@
     </div>
       <ul class = "listclass" ng-show="paymentForm.submitAttempt||paymentForm.creditCard.$touched && !paymentForm.$valid">
       <li ng-show="paymentForm.creditCard.$error.minlength">Credit card must be 15-19 digits</li>
-      <li ng-show="paymentForm.creditCard.$error.pattern">Credit card must consist of only numbers</li>
-      <li ng-show="paymentForm.creditCard.$error.invalid">Credit card must be a valid Amex, Visa, Discover, or Master Card</li>
+      <li ng-show="paymentForm.creditCard.$error.pattern">Credit card must contain only numbers</li>
+      <li ng-show="paymentForm.creditCard.$error.invalid">Invalid card number</li>
       <li ng-show="paymentForm.creditCard.$error.required">Credit card number is required</li>
       </ul>
         <br/>
@@ -46,7 +65,7 @@
      <ul class = "listclass" ng-show="paymentForm.submitAttempt ||paymentForm.year.$touched && !paymentForm.$valid">
       <li ng-show="paymentForm.year.$error.required">Expiration year required</li>
       <li ng-show="paymentForm.year.$error.pattern">Year must contain only numbers</li>
-      <li ng-show="paymentForm.month.$error.invalid">Provided expiration date is invalid</li>
+      <li ng-show="paymentForm.month.$error.invalid">Invalid expiry date</li>
     </ul>
     </div>
     </div>
@@ -62,12 +81,18 @@
     </fieldset>
 	</div>
 
-    </div>
-	<div class="modal-footer ">
-         <div class="col-sm-8 frame">
-	      <button type="button" class="add-project" ng-click="buttonval=false">Edit</button>
-          <button ng-click="paymentForm.submitAttempt=true;save(ccinfo)" type="submit" class="add-project">Save</button>
-          <button type="button" class="cancel" ng-click="$dismiss()">Cancel</button>
+
+	<div class="modal-footer">
+         <div class="form-row parent">
+	      <button type="button" class="cancel" ng-click="buttonval=false">Edit</button>
+          <button ng-click="paymentForm.submitAttempt=true;buttonval=true;save(ccinfo)" type="submit" class="cancel" style="margin-left:6px;">Save</button>
+          <button type="button" class="cancel" ng-click="$dismiss()" style="margin-left:6px;">Cancel</button>
+         <br/>
+
          </div>
-	</div>
+        <hr>
+        <div class="form-row parent">
+         <button type="button" class="cancel" ng-click="">Make Payment</button>
+        </div>
+       </div>
 </div>

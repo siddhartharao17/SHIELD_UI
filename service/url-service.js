@@ -6,11 +6,12 @@ angular.module('shield').factory('urlService',function($cookies) {
     urlService.loginUrl = baseUrl + '/api_login/';
     urlService.changePassUrl = baseUrl + '/change_pass';
     urlService.dashLogUrl = baseUrl + '/getKeylogData/' + $cookies.get('u_id');
-    urlService.profileUrl = baseUrl + '/get_profile/' + $cookies.get('u_id');
+  //  urlService.profileUrl = baseUrl + '/get_profile/' + $cookies.get('u_id');
     urlService.loginUrl = baseUrl + '/api_login';
    // urlService.dashLogUrl = baseUrl + '/getKeylogData/' + $cookies.get('u_id');
     urlService.profileUrl = baseUrl + '/get_profile';//+ $cookies.get('u_id');
     urlService.createUpdateProfileUrl = baseUrl + '/create_update_profile';
     urlService.createUpdatePaymentsUrl = baseUrl + '/create_update_payments';
+    urlService.paymentUrl = baseUrl + '/get_payments';
     return urlService;
 });

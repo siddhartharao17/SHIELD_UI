@@ -62,6 +62,16 @@ angular.module('shield').factory('shieldService',function($http, $q, $cookies, n
         }).error(deferred.reject);
         return deferred.promise;
     };
+     shieldService.getPayments = function () {
+        var deferred = $q.defer();
+        var dataTosend = {u_id : $cookies.get('u_id')};
+        $http.post(urlService.paymentUrl, dataTosend).
+        success(function (data) {
+//			    console.log("Sucess ");
+            deferred.resolve(data);
+        }).error(deferred.reject);
+        return deferred.promise;
+    };
 
     return shieldService;
 });

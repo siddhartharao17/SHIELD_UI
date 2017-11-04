@@ -6,6 +6,23 @@ angular.module('shield').controller
       $scope.months = $locale.DATETIME_FORMATS.MONTH
       $scope.ccinfo = {type:undefined}
 
+       shieldService.getPayments().then(function (data) {
+        if(data.message != "Error"){
+
+            $scope.ccinfo.cc_number = data.message.cc_number;
+            $scope.ccinfo.cc_type = data.message.cc_type;
+            $scope.ccinfo.cc_name = data.message.cc_name;
+            $scope.ccinfo.month = data.message.cc_exdate.substring(0,data.message.cc_exdate.indexOf('/'));
+            $scope.ccinfo.year = data.message.cc_exdate.substring(data.message.cc_exdate.indexOf('/')+1);
+            $scope.ccinfo.classname =  data.message.cc_type ? 'fa fa-cc-mastercard'
+                : data.message.cc_type ? 'fa fa-cc-visa'
+                : data.message.cc_type ? 'fa fa-cc-amex'
+                : data.message.cc_type ? 'fa fa-cc-discover'
+                : 'na'
+
+             }
+    });
+
       $scope.save = function(data){
         if ($scope.paymentForm.$valid){
        // console.log(data)
