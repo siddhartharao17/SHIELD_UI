@@ -25,6 +25,7 @@ angular.module('shield').controller
 
       $scope.save = function(data){
         if ($scope.paymentForm.$valid){
+        $scope.ccinfo.bval = 'true'
        // console.log(data)
            // send json data
          var dataToSend  = {
@@ -103,7 +104,7 @@ angular.module('shield').directive
               {
                 ctrl.$setValidity('invalid',false)
               }
-              if ( scope.ccinfo.month >12 )
+              if ( scope.ccinfo.month >12 || scope.ccinfo.month ==0)
               {
                 ctrl.$setValidity('invalid',false)
               }

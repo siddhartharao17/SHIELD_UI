@@ -57,6 +57,7 @@
     <ul class = "listclass" ng-show="paymentForm.submitAttempt ||paymentForm.month.$touched && !paymentForm.$valid">
       <li ng-show="paymentForm.month.$error.required">Expiration month required</li>
       <li ng-show="paymentForm.month.$error.pattern">Month must contain only numbers</li>
+        <li ng-show="paymentForm.month.$error.invalid">Invalid expiry date</li>
     </ul>
     </div>
     <p class="para">/</p>
@@ -65,10 +66,11 @@
      <ul class = "listclass" ng-show="paymentForm.submitAttempt ||paymentForm.year.$touched && !paymentForm.$valid">
       <li ng-show="paymentForm.year.$error.required">Expiration year required</li>
       <li ng-show="paymentForm.year.$error.pattern">Year must contain only numbers</li>
-      <li ng-show="paymentForm.month.$error.invalid">Invalid expiry date</li>
+
     </ul>
     </div>
     </div>
+        <br/>
     <div class="form-row parent">
     <div class="col-xs-7">
     <input type="text" name="holderName" ng-model="ccinfo.cc_name" required  placeholder="Cardholder name" class="form-control">
@@ -85,7 +87,7 @@
 	<div class="modal-footer">
          <div class="form-row parent">
 	      <button type="button" class="cancel" ng-click="buttonval=false">Edit</button>
-          <button ng-click="paymentForm.submitAttempt=true;buttonval=true;save(ccinfo)" type="submit" class="cancel" style="margin-left:6px;">Save</button>
+          <button ng-click="paymentForm.submitAttempt=true;buttonval=paymentForm.$valid?true:false;save(ccinfo)" type="submit" class="cancel" style="margin-left:6px;">Save</button>
           <button type="button" class="cancel" ng-click="$dismiss()" style="margin-left:6px;">Cancel</button>
          <br/>
 
