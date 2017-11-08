@@ -1,6 +1,6 @@
 angular.module('shield').controller
   ( 'PaymentModalCtrl'
-  , function($scope, $locale,$cookies, shieldService, ngToast) {
+  , function($scope, $locale,$cookies, shieldService, ngToast ,$location,$uibModal) {
       $scope.currentYear = new Date().getFullYear()
       $scope.currentMonth = new Date().getMonth() + 1
       $scope.months = $locale.DATETIME_FORMATS.MONTH
@@ -22,6 +22,15 @@ angular.module('shield').controller
 
              }
     });
+
+    $scope.makepayment = function () {
+        $uibModal.open({
+            templateUrl: 'partial/invoice-modal/invoice-modal.html',
+            controller: 'InvoiceModalCtrl'
+        }).result.then(function(result){
+            //do something with the result
+        });
+    };
 
       $scope.save = function(data){
         if ($scope.paymentForm.$valid){
