@@ -1,0 +1,98 @@
+<div ng-controller="InvoiceModalCtrl">
+
+<div >
+	<div class="modal-header login-header" >
+        <script type="text/javascript"
+        src="bower_components/angular-payments/lib/angular-payments.js">
+        </script>
+		<button type="button" class="close pull-right" ng-click="$dismiss()" aria-hidden="true">&times;</button>
+		<h4 class="modal-title col-xs-10"><i class="fa fa-credit-card" aria-hidden="true"></i> Invoice</h4>
+	</div>
+
+
+    <div class="frame invoice">
+    <fieldset ng-disabled="buttonval" ng-init="buttonval=true">
+
+    <form novalidate name="paymentForm" style="margin:20px;">
+    <div>
+    <label>Payment Method</label>
+    <br/>
+        "#cardtype" ending **** "#last 4 digits of card"
+
+        </div>
+        <hr>
+        <div class="form-row parent">
+        <div class="row">
+
+    		<div class="panel panel-default">
+    			<div class="panel-heading">
+    				<h3 class="panel-title"><strong>Order summary</strong></h3>
+    			</div>
+    			<div class="panel-body">
+    				<div class="table-responsive">
+    					<table class="table table-condensed">
+    						<thead>
+                                <tr>
+        							<td><strong>Item</strong></td>
+        							<td class="text-center"><strong>Price</strong></td>
+        							<td class="text-center"><strong>Quantity</strong></td>
+        							<td class="text-right"><strong>Totals</strong></td>
+                                </tr>
+    						</thead>
+    						<tbody>
+    							<!-- foreach ($order->lineItems as $line) or some such thing here -->
+    							<tr>
+    								<td>BS-200</td>
+    								<td class="text-center">$10.99</td>
+    								<td class="text-center">1</td>
+    								<td class="text-right">$10.99</td>
+    							</tr>
+
+                                <tr>
+            						<td>BS-1000</td>
+    								<td class="text-center">$600.00</td>
+    								<td class="text-center">1</td>
+    								<td class="text-right">$600.00</td>
+    							</tr>
+    							<tr>
+    								<td class="thick-line"></td>
+    								<td class="thick-line"></td>
+    								<td class="thick-line text-center"><strong>Subtotal</strong></td>
+    								<td class="thick-line text-right">$670.99</td>
+    							</tr>
+    							<tr>
+    								<td class="no-line"></td>
+    								<td class="no-line"></td>
+    								<td class="no-line text-center"><strong>Tax</strong></td>
+    								<td class="no-line text-right">$15</td>
+    							</tr>
+    							<tr>
+    								<td class="no-line"></td>
+    								<td class="no-line"></td>
+    								<td class="no-line text-center"><strong>Total</strong></td>
+    								<td class="no-line text-right">$685.99</td>
+    							</tr>
+    						</tbody>
+    					</table>
+    				</div>
+    			</div>
+    		</div>
+
+    </div>
+        </div>
+        <br/>
+
+    </form>
+    </fieldset>
+	</div>
+
+
+	<div class="modal-footer">
+         <hr>
+        <div class="form-row parent">
+         <button type="button" class="cancel" ng-click="makepayment()">Print</button>
+        </div>
+       </div>
+</div>
+
+</div>
