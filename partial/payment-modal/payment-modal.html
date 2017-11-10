@@ -18,11 +18,8 @@
         <br/>
         <div class="form-row parent">
            <div class="col-xs-5">
-            <select class="form-control">
-              <option default></option>
-              <option value="1000">Basic($1000/year)</option>
-              <option value="2000">Premium($2000/year)</option>
-            </select>
+           <select class="form-control" name="optionSel" ng-model="selectedOption.name" ng-init="selectedOption = option[0] "
+                   ng-options="option.value as option.name for option in options"></select>
            </div>
         </div>
         <hr>

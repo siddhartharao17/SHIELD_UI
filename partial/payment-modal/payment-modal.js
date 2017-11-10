@@ -6,6 +6,21 @@ angular.module('shield').controller
       $scope.months = $locale.DATETIME_FORMATS.MONTH
       $scope.ccinfo = {type:undefined}
 
+$scope.options = [
+    {name: 'Basic($1000/year)', value:'1000'},
+    {name: 'Premium($2000/year)', value:'2000'},
+  ];
+
+$scope.selectedOption = {value: '1000', name: 'Basic($1000/year)'}; // default value
+
+// omitted for brevity
+
+// your submit function
+$scope.createExecutionStepOption = function(caseExecutionId) {
+  // do whatever. you can access the selected option using $scope.selectedOption
+};
+
+
        shieldService.getPayments().then(function (data) {
         if(data.message != "Error"){
 
@@ -26,11 +41,33 @@ angular.module('shield').controller
     $scope.makepayment = function () {
         $uibModal.open({
             templateUrl: 'partial/invoice-modal/invoice-modal.html',
-            controller: 'InvoiceModalCtrl'
+            controller: 'InvoiceModalCtrl',
+            scope: $scope,
+            resolve: {
+                info: function()
+                {
+                return $scope.ccinfo.cc_number,$scope.ccinfo.cc_type,$scope.selectedOption.value,$scope.selectedOption.name;
+                }
+                }
+
         }).result.then(function(result){
             //do something with the result
+
         });
     };
+
+     $scope.open = function() {
+    var modalinstance = $uibModal.open({
+      scope: $scope,
+      templateUrl: 'modal.html',
+      resolve: {
+        users: function() {
+          return $scope.users;
+        }
+      }
+    })
+  };
+
 
       $scope.save = function(data){
         if ($scope.paymentForm.$valid){

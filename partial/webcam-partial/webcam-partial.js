@@ -15,9 +15,8 @@ $scope.getWebCamImage = function () {
 
         }
         console.log(dataToSend);
-    shieldService.getWebCamImg(dataToSend).then(function (data) {
-
-        console.log(data.message);
+        shieldService.getWebCamImg(dataToSend).then(function (data) {
+//        console.log(data.message);
         $scope.webCamDataTemp = data.message;
 
     });
