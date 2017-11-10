@@ -18,8 +18,8 @@
         <br/>
         <div class="form-row parent">
            <div class="col-xs-5">
-           <select class="form-control" name="optionSel" ng-model="selectedOption.name" ng-init="selectedOption = option[0] "
-                   ng-options="option.value as option.name for option in options"></select>
+           <select class="form-control" name="optionSel" ng-model="selectedOption" ng-init="selectedOption = option[0] "
+                   ng-options="option as option.name for option in options"></select>
            </div>
         </div>
         <hr>
