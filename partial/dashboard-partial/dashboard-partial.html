@@ -13,8 +13,8 @@
                 </div>
                 <div class="navi">
                     <ul>
-                        <li class="active"><a><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Logs</span></a></li>
-                        <li><a><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Workflow</span></a></li>
+                        <li class="active" ng-click="openLogs()"><a><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Logs</span></a></li>
+                        <li ng-click="openWebcam()"><a><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Webcam</span></a></li>
                         <li><a><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Statistics</span></a></li>
                         <li><a><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Calender</span></a></li>
                         <li><a><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Users</span></a></li>
@@ -125,34 +125,7 @@
                     <!--////Table -->
 
                     <div class="row">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-
-                                <div class="table-container">
-                                    <table class="table table-filter">
-                                        <tbody>
-                                            <tr ng-repeat="log in logsData track by $index" data-status="pagado">
-                                                <td>
-                                                    <div class="media">
-                                                        <a class="pull-left">
-                                                            <img src="/assets/icons/ie.ico" class="media-photo">
-                                                        </a>
-                                                        <div class="media-body">
-                                                            <span class="media-meta pull-right">{{log.keylog_timestamp}}</span>
-                                                            <h4 class="title">
-                                                                {{log.application_name}}
-                                                                <!--<span class="pagado">(Pagado)</span>-->
-                                                            </h4>
-                                                            <p class="summary">{{log.log_text}}</p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+                        <div ui-view></div>
                     </div>
                     <!--////-->
 

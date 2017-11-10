@@ -9,6 +9,12 @@ angular.module('shield').config(function($stateProvider, $urlRouterProvider) {
     $stateProvider.state('dashboard-partial', {
         url: '/dashboard',
         templateUrl: 'partial/dashboard-partial/dashboard-partial.html'
+    }).state('dashboard-partial.logs', {
+        url: '/logs',
+        templateUrl: 'partial/logs-partial/logs-partial.html'
+    }).state('dashboard-partial.webcam', {
+        url: '/webcam',
+        templateUrl: 'partial/webcam-partial/webcam-partial.html'
     });
     $stateProvider.state('faq-partial', {
         url: '/faq',
@@ -23,6 +29,14 @@ angular.module('shield').config(function($stateProvider, $urlRouterProvider) {
         url: '/invoice-modal',
         templateUrl: 'partial/invoice-modal/invoice-modal.html'
     });
+
+    // $stateProvider.state("webcam", {
+    //     views: {
+    //         "webcam": {
+    //             template: "<h1>HELLO!</h1>"
+    //         }
+    //     }
+    // })
     /* Add New States Above */
     $urlRouterProvider.otherwise('/home');
 

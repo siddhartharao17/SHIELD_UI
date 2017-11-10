@@ -1,0 +1,32 @@
+<div class="col-md-12" ng-controller="LogsPartialCtrl">
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+            <div class="table-container">
+                <table class="table table-filter">
+                    <tbody>
+                    <tr ng-repeat="log in logsData track by $index" data-status="pagado">
+                        <td>
+                            <div class="media">
+                                <a class="pull-left">
+                                    <img src="/assets/icons/ie.ico" class="media-photo">
+                                </a>
+                                <div class="media-body">
+                                    <span class="media-meta pull-right">{{log.keylog_timestamp}}</span>
+                                    <h4 class="title">
+                                        {{log.application_name}}
+                                        <!--<span class="pagado">(Pagado)</span>-->
+                                    </h4>
+                                    <p class="summary">{{log.log_text}}</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
