@@ -13,12 +13,33 @@
     </div>
     <div class="col-md-6">
         <div class="webcam-card">
-            <img src="https://www.w3schools.com/css/img_fjords.jpg" alt="Norway" style="width:100%">
+              <label>image should be here</label>
+            <img data-ng-src="{{'data:image/png;base64,' + webCamDataTemp.data }}" style="height: 200px;width:100px"/>
+
             <div class="img-desc">
                 <p>When it was captured and Bla Bla.</p>
+
             </div>
         </div>
     </div>
+        <div class="table-container">
+                <table class="table table-filter">
+                    <tbody>
+                    <tr ng-repeat="img in webCamData track by $index" data-status="pagado">
+                        <td>
+                            <div class="media">
+                                <div class="media-body">
+                                    <span class="media-meta pull-right">{{img.webcam_date_time}}</span>
+
+                                    <a ng-click="getWebCamImage()" class="summary" ng-model="image_url">{{img.image_url}}</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
 
     </div>
 

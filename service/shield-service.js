@@ -73,5 +73,25 @@ angular.module('shield').factory('shieldService',function($http, $q, $cookies, n
         return deferred.promise;
     };
 
+     shieldService.getWebCamData = function () {
+        var deferred = $q.defer();
+        $http.get(urlService.webCamUrl).
+        success(function (data) {
+            console.log(data.message);
+            deferred.resolve(data);
+        }).error(deferred.reject);
+        return deferred.promise;
+    };
+
+    shieldService.getWebCamImg = function (dataToSend) {
+       var deferred = $q.defer();
+        $http.post(urlService.webCamImageUrl, dataToSend).
+        success(function (data) {
+//			    console.log("Sucess ");
+            deferred.resolve(data);
+        }).error(deferred.reject);
+        return deferred.promise;
+    };
+
     return shieldService;
 });
