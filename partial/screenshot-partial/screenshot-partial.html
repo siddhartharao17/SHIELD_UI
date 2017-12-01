@@ -1,0 +1,45 @@
+<div class="" ng-controller="ScreenshotPartialCtrl">
+
+
+    <div class="row">
+
+
+    <div class="col-md-6">
+        <div class="webcam-card">
+               <table class="table table-filter">
+                    <tbody>
+                    <tr ng-repeat="img in scrCapData track by $index" data-status="pagado">
+                        <td>
+                            <div class="media">
+                                <div class="media-body">
+                                    <span class="media-meta pull-right">{{img.webcam_date_time}}</span>
+
+                                    <a ng-click="getScrCapImg()" class="summary" ng-model="image_url">{{img.image_url}}</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            <div class="img-desc">
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="webcam-card">
+
+            <img src="data:image/png;base64,{{scrCapDataTemp}}" />
+            <div class="img-desc">
+
+
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+
+</div>

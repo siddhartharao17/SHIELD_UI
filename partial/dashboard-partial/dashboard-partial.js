@@ -8,7 +8,9 @@ angular.module('shield').controller('DashboardPartialCtrl',function($scope, shie
     $scope.openWebcam = function () {
         $state.go("dashboard-partial.webcam");
     };
-
+    $scope.openScrShot = function () {
+        $state.go("dashboard-partial.scrshot");
+    };
     shieldService.getProfile().then(function (data) {
         // console.log(data);
         $scope.profileData = data.message;

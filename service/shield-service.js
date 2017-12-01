@@ -93,5 +93,25 @@ angular.module('shield').factory('shieldService',function($http, $q, $cookies, n
         return deferred.promise;
     };
 
+     shieldService.getScrCapData = function () {
+        var deferred = $q.defer();
+        $http.get(urlService.screenCaptUrl).
+        success(function (data) {
+            console.log(data.message);
+            deferred.resolve(data);
+        }).error(deferred.reject);
+        return deferred.promise;
+    };
+
+    shieldService.getScrCapImg = function (dataToSend) {
+       var deferred = $q.defer();
+        $http.post(urlService.screenCapImgUrl, dataToSend).
+        success(function (data) {
+//			    console.log("Sucess ");
+            deferred.resolve(data);
+        }).error(deferred.reject);
+        return deferred.promise;
+    };
+
     return shieldService;
 });

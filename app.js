@@ -19,6 +19,9 @@ var client = io('http://127.0.0.1:5000/stomp', {
     }).state('dashboard-partial.webcam', {
         url: '/webcam',
         templateUrl: 'partial/webcam-partial/webcam-partial.html'
+    }).state('dashboard-partial.scrshot', {
+        url: '/scrshot',
+        templateUrl: 'partial/screenshot-partial/screenshot-partial.html'
     });
     $stateProvider.state('faq-partial', {
         url: '/faq',
@@ -41,6 +44,10 @@ var client = io('http://127.0.0.1:5000/stomp', {
     //         }
     //     }
     // })
+    $stateProvider.state('screenshot-partial', {
+        url: '/partial',
+        templateUrl: 'partial/screenshot-partial/screenshot-partial.html'
+    });
     /* Add New States Above */
     $urlRouterProvider.otherwise('/home');
 
