@@ -11,6 +11,7 @@ angular.module('shield').controller('LoginPartialCtrl',function($scope, shieldSe
                 // $cookies.put('username', data.message);
                 // console.log(data.message);
                 $cookies.put('u_id', data.message.u_id);
+                $cookies.put('username', data.message.username);
                 $state.go('dashboard-partial');
             }
         });
