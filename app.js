@@ -1,4 +1,4 @@
-angular.module('shield', ['ngAnimate', 'ngToast', 'ui.bootstrap','ui.router','ngAnimate', 'ngCookies','perfect_scrollbar']);
+angular.module('shield', ['ngAnimate', 'ngToast', 'ui.bootstrap','ui.router','ngAnimate', 'ngCookies']);
 
 angular.module('shield').config(function($stateProvider, $urlRouterProvider) {
 

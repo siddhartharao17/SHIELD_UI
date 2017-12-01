@@ -61,4 +61,13 @@ angular.module('shield').controller('DashboardPartialCtrl',function($scope, shie
             //do something with the result
         });
     };
+
+    $scope.displayFeedbackForm = function () {
+        $uibModal.open({
+            templateUrl: 'partial/feedback-modal/feedback-modal.html',
+            controller: 'FeedbackModalCtrl'
+        }).result.then(function(result){
+            //do something with the result
+        });
+    };
 });
