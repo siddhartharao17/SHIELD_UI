@@ -1,7 +1,11 @@
-angular.module('shield', ['ngAnimate', 'ngToast', 'ui.bootstrap','ui.router','ngAnimate', 'ngCookies']);
+angular.module('shield', ['ngAnimate', 'ngToast', 'ui.bootstrap','ui.router','ngAnimate', 'ngCookies','perfect_scrollbar']);
 
 angular.module('shield').config(function($stateProvider, $urlRouterProvider) {
 
+var allowedOrigins = "http://localhost:5000";
+var client = io('http://127.0.0.1:5000/stomp', {
+    origins: allowedOrigins
+});
     $stateProvider.state('login-partial', {
         url: '/login',
         templateUrl: 'partial/login-partial/login-partial.html'
@@ -56,3 +60,4 @@ angular.module('shield').run(function($rootScope) {
     };
 
 });
+
