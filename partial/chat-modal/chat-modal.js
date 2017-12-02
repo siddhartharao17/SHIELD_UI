@@ -42,11 +42,14 @@ else
  console.log("a_________"+user.user)
  console.log("size "+user.length)
 
-        $scope.userlist.push(user)
+        $scope.userlist = user.user;
          $scope.$apply();
 
  });
-
+$scope.mySplit = function(string) {
+    var array = string.split(',');
+    return array;
+};
 var mymodel = $scope.mymod
 
 console.log("mymodel"+mymodel)
