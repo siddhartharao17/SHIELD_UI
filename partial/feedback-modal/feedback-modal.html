@@ -1,0 +1,28 @@
+<!-- Modal -->
+<div>
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header login-header">
+            <button type="button" class="close" ng-click="$dismiss()">×</button>
+            <h4 class="modal-title">Feedback & Suggestions</h4>
+        </div>
+        <div class="modal-body" >
+
+                <input type="text" placeholder="Your Review" name="fname" ng-model="first_name">
+                <input type="text" placeholder="Overall Experience" name="lname" ng-model="last_name">
+                <input type="text" placeholder="Timely Response" name="username" ng-model="username">
+                <!-- added contact num by puneet-->
+                <input type="text" placeholder="Our Support" name="contact_number" ng-model="contact_number">
+                <input type="text" placeholder="Overall Satisfaction" name="address" ng-model="address">
+                <input type="text" placeholder="Is there anything else you want tell us?" name="street" ng-model="street">
+
+
+            <!--<textarea placeholder="Desicrption"></textarea> COMMENTED BY PUNEET 10/18-->
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="cancel" ng-click="$dismiss()">Close</button>
+            <button type="button" class="add-project" ng-click="$dismiss();submit()">Submit</button>
+        </div>
+    </div>
+
+</div>
