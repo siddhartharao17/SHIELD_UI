@@ -1,4 +1,4 @@
-angular.module('shield', ['ngAnimate', 'ngToast', 'ui.bootstrap','ui.router','ngAnimate', 'ngCookies']);
+angular.module('shield', ['ngAnimate', 'ngToast', 'ui.bootstrap','ui.router','ngAnimate', 'ngCookies','chart.js']);
 
 angular.module('shield').config(function($stateProvider, $urlRouterProvider) {
 
@@ -22,6 +22,9 @@ var client = io('http://127.0.0.1:5000/stomp', {
     }).state('dashboard-partial.scrshot', {
         url: '/scrshot',
         templateUrl: 'partial/screenshot-partial/screenshot-partial.html'
+    }).state('dashboard-partial.statistics', {
+        url: '/statistics',
+        templateUrl: 'partial/analytics-partial/analytics-partial.html'
     });
     $stateProvider.state('faq-partial', {
         url: '/faq',

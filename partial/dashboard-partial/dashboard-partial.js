@@ -11,10 +11,15 @@ angular.module('shield').controller('DashboardPartialCtrl',function($scope, shie
     $scope.openScrShot = function () {
         $state.go("dashboard-partial.scrshot");
     };
+     $scope.openStat = function () {
+        $state.go("dashboard-partial.statistics");
+    };
     shieldService.getProfile().then(function (data) {
         // console.log(data);
         $scope.profileData = data.message;
     });
+
+
 
 
     $scope.openChat = function () {

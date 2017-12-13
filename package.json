@@ -27,6 +27,7 @@
     "load-grunt-tasks": "~0.2"
   },
   "dependencies": {
+    "angular-chart.js": "^1.1.1",
     "angular-perfect-scrollbar": "0.0.5"
   }
 }
