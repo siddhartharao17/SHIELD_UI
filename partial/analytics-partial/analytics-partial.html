@@ -6,7 +6,8 @@
    </p>
     <p>
         Year
-        <select ng-init="selectedName = year[0]" ng-model="selectedName" ng-options="x for x in year"  ng-change="getValue(selectedName)">
+        <!--<select ng-init="selectedName = year[0]" ng-model="selectedName" ng-options="x for x in year"  ng-change="getValue(selectedName)">-->
+         <select ng-model="selectedName" ng-options="x for x in year"  ng-change="getValue(selectedName)" >
 </select>
     </p>
 <br/>
