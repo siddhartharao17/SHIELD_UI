@@ -1,13 +1,22 @@
 <div class="col-md-12" ng-controller="AnalyticsPartialCtrl">
    <p>
+       <br/>
         <b>WebCam Images Data </b>
 
    </p>
+    <p>
+        Year
+        <select ng-init="selectedName = year[0]" ng-model="selectedName" ng-options="x for x in year"  ng-change="getValue(selectedName)">
+</select>
+    </p>
 <br/>
-    <canvas id="line" class="chart chart-line" chart-data="data"
+  <div style="height:800px;width:800px;">
+
+        <canvas id="line" class="chart chart-line" chart-data="data"
 chart-labels="labels" chart-series="series" chart-options="options"
 chart-dataset-override="datasetOverride" chart-click="onClick">
 </canvas>
-<!-- directive: ui-chart data4 -->
+  </div>
+
 
 </div>
