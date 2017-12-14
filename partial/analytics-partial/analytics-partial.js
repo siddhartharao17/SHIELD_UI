@@ -34,7 +34,6 @@ shieldService.getWebCamData().then(function (data) {
 $scope.year = Object.keys(completeD);
 // set default value in drop down to the current year
 var cal = new Date().getFullYear();
-console.log("cal",cal);
 $scope.selectedName = String(cal);
 setData(String(cal));
 

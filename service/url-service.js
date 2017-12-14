@@ -17,6 +17,7 @@ angular.module('shield').factory('urlService',function($cookies) {
     urlService.webCamImageUrl = baseUrl + '/getWebCamImages';
     urlService.screenCaptUrl = baseUrl + '/getScrCapData/' + $cookies.get('u_id');
     urlService.screenCapImgUrl = baseUrl + '/getScrCapImages';
-
+    urlService.featureUrl = baseUrl + '/get_features';
+    urlService.updateFeatureUrl = baseUrl + '/update_features';
     return urlService;
 });

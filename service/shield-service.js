@@ -77,7 +77,6 @@ angular.module('shield').factory('shieldService',function($http, $q, $cookies, n
         var deferred = $q.defer();
         $http.get(urlService.webCamUrl).
         success(function (data) {
-            console.log(data.message);
             deferred.resolve(data);
         }).error(deferred.reject);
         return deferred.promise;
@@ -112,6 +111,26 @@ angular.module('shield').factory('shieldService',function($http, $q, $cookies, n
         }).error(deferred.reject);
         return deferred.promise;
     };
+
+    shieldService.getFeatures = function () {
+        var deferred = $q.defer();
+        var dataTosend = {u_id : $cookies.get('u_id')};
+        $http.post(urlService.featureUrl, dataTosend).
+        success(function (data) {
+//			    console.log("Sucess ");
+            deferred.resolve(data);
+        }).error(deferred.reject);
+        return deferred.promise;
+    };
+     shieldService.updateFeature = function (dataToSend) {
+        var deferred = $q.defer();
+        $http.post(urlService.updateFeatureUrl, dataToSend).
+        success(function (data) {
+            deferred.resolve(data);
+        }).error(deferred.reject);
+        return deferred.promise;
+    };
+
 
     return shieldService;
 });

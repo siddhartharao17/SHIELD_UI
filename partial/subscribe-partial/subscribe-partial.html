@@ -8,18 +8,20 @@
             <div class="modal-body" ng-controller="SubscribePartialCtrl" >
                 <div>
                     <table>
-                        <tr><td><h4 style="float:left;margin-left:10px"><strong>Subscription Type:</strong>  Basic</h4></td></tr>
-                      <tr><td><h4 style="float:left;margin-left:10px"><strong>Renew Date: </strong>  01/01/2018</h4></td></tr>
+                        <tr><td><h4 style="float:left;margin-left:10px"><strong>Subscription Type:</strong>  {{scrCapData.subscription_type}}</h4></td></tr>
+                      <tr><td><h4 style="float:left;margin-left:10px"><strong>Renew Date: </strong>  {{expiry}}</h4></td></tr>
                     </table>
                 </div>
+
                  <div class="panel-group" >
                       <div class="panel panel-primary" >
+                          <fieldset ng-disabled="buttonval" ng-init="buttonval=true">
                     <table>
 
                         <tr style="margin-top:10px;">
                             <td>  <h4 style="float:left;margin-left:10px;">WebCam Capture</h4></td>
                             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            <td><label class="switch" style="text-align:right;"><input type="checkbox" checked>
+                            <td><label class="switch" style="text-align:right;"><input type="checkbox" ng-model="checkboxModel.webcam">
                                     <span class="slider round"></span>
                                 </label>
                             </td>
@@ -28,7 +30,7 @@
                         <tr>
                             <td><h4 style="float:left;margin-left:10px">Screenshot Capture</h4></td>
                             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            <td> <label class="switch" style="text-align:right;"><input type="checkbox" checked>
+                            <td> <label class="switch" style="text-align:right;"><input type="checkbox" ng-model="checkboxModel.scrnshot">
                                     <span class="slider round"></span>
                                 </label></td>
 
@@ -36,7 +38,7 @@
                          <tr>
                             <td><h4 style="float:left;margin-left:10px">KeyLog Capture</h4></td>
                             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            <td> <label class="switch" style="text-align:right;"><input type="checkbox" checked>
+                            <td> <label class="switch" style="text-align:right;"><input type="checkbox" ng-model="checkboxModel.keylog">
                                     <span class="slider round"></span>
                                 </label></td>
 
@@ -44,16 +46,21 @@
                         <tr>
                             <td><h4 style="float:left;margin-left:10px">Remote Lock</h4></td>
                             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            <td> <label class="switch" style="text-align:right;"><input type="checkbox" checked>
+                            <td> <label class="switch" style="text-align:right;"><input type="checkbox" ng-model="checkboxModel.remotelock">
                                     <span class="slider round"></span>
                                 </label></td>
 
                         </tr>
                     </table>
+                 </fieldset>
                     </div>
                   </div>
 
-
+             <div class="modal-footer">
+                <button type="button" class="add-project" ng-click="buttonval=false">Edit</button>
+                <button type="button" class="add-project" ng-click="buttonval=true;save()">Save</button>
             </div>
+            </div>
+
 </div>
 </div>
