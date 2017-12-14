@@ -17,6 +17,9 @@ angular.module('shield').controller('DashboardPartialCtrl',function($scope, shie
      $scope.getHelp = function () {
         $state.go("dashboard-partial.getHelp");
     };
+    $scope.displayFaqs = function () {
+        $state.go("dashboard-partial.faq");
+    };
     shieldService.getProfile().then(function (data) {
         // console.log(data);
         $scope.profileData = data.message;
@@ -38,16 +41,6 @@ angular.module('shield').controller('DashboardPartialCtrl',function($scope, shie
         $uibModal.open({
             templateUrl: 'partial/profile-modal/profile-modal.html',
             controller: 'ProfileModalCtrl'
-        }).result.then(function(result){
-            //do something with the result
-        });
-    };
-
-     $scope.displayFaqs = function () {
-
-        $uibModal.open({
-            templateUrl: 'partial/faq-partial/faq-partial.html',
-            controller: 'FaqPartialCtrl'
         }).result.then(function(result){
             //do something with the result
         });
