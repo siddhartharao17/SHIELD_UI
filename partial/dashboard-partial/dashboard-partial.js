@@ -20,6 +20,9 @@ angular.module('shield').controller('DashboardPartialCtrl',function($scope, shie
     $scope.displayFaqs = function () {
         $state.go("dashboard-partial.faq");
     };
+    $scope.openSubs = function () {
+        $state.go("dashboard-partial.subsc");
+    };
     shieldService.getProfile().then(function (data) {
         // console.log(data);
         $scope.profileData = data.message;

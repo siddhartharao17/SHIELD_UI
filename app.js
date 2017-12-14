@@ -31,6 +31,9 @@ var client = io('http://127.0.0.1:5000/stomp', {
     }).state('dashboard-partial.faq', {
         url: '/faq',
         templateUrl: 'partial/faq-partial/faq-partial.html'
+    }).state('dashboard-partial.subsc', {
+        url: '/subscribe',
+        templateUrl: 'partial/subscribe-partial/subscribe-partial.html'
     });
     $stateProvider.state('payment-modal', {
         url: '/partial/',
