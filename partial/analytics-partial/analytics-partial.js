@@ -17,11 +17,10 @@ shieldService.getWebCamData().then(function (data) {
             var yearselected = temp.slice(12,16);
             completeD[yearselected] = {"Jan":0, "Feb":0, "Mar":0, "Apr":0, "May":0, "Jun":0, "Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0};
           }
-        console.log("complete dict printed beforee---");
-        console.log(completeD);
+
         for(q=0;q<webData.length;q++)
         {
-            console.log("i am inside web");
+
             var diction = [];
             var temp = webData[q].webcam_date_time;
 

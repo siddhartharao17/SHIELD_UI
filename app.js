@@ -25,6 +25,9 @@ var client = io('http://127.0.0.1:5000/stomp', {
     }).state('dashboard-partial.statistics', {
         url: '/statistics',
         templateUrl: 'partial/analytics-partial/analytics-partial.html'
+    }).state('dashboard-partial.getHelp', {
+        url: '/help',
+        templateUrl: 'partial/help-partial/help-partial.html'
     });
     $stateProvider.state('faq-partial', {
         url: '/faq',

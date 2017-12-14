@@ -1,5 +1,5 @@
 angular.module('shield').controller('DashboardPartialCtrl',function($scope, shieldService, $uibModal, $state){
-    $state.go("dashboard-partial.logs");
+    $state.go("dashboard-partial.statistics");
 
     $scope.openLogs = function () {
         $state.go("dashboard-partial.logs");
@@ -13,6 +13,9 @@ angular.module('shield').controller('DashboardPartialCtrl',function($scope, shie
     };
      $scope.openStat = function () {
         $state.go("dashboard-partial.statistics");
+    };
+     $scope.getHelp = function () {
+        $state.go("dashboard-partial.getHelp");
     };
     shieldService.getProfile().then(function (data) {
         // console.log(data);
