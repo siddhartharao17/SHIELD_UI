@@ -96,7 +96,7 @@ angular.module('shield').factory('shieldService',function($http, $q, $cookies, n
         var deferred = $q.defer();
         $http.get(urlService.screenCaptUrl).
         success(function (data) {
-            console.log(data.message);
+            //console.log(data.message);
             deferred.resolve(data);
         }).error(deferred.reject);
         return deferred.promise;

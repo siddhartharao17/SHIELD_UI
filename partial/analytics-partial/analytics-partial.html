@@ -1,6 +1,10 @@
 <div class="col-md-12" ng-controller="AnalyticsPartialCtrl">
-   <p>
-       <br/>
+    <table>
+        <tr><td style="height:90px;">&nbsp;&nbsp;&nbsp;</td></tr>
+        <tr>
+
+            <td> <p>
+
         <b>WebCam Images Data </b>
 
    </p>
@@ -9,15 +13,50 @@
         <!--<select ng-init="selectedName = year[0]" ng-model="selectedName" ng-options="x for x in year"  ng-change="getValue(selectedName)">-->
          <select ng-model="selectedName" ng-options="x for x in year"  ng-change="getValue(selectedName)" >
 </select>
-    </p>
-<br/>
-  <div style="height:800px;width:800px;">
+    </p></td>
+<td style="width:200px;">&nbsp;&nbsp;&nbsp;</td>
+         <td><p>
+     <b>Screenshot Images Data </b>
+
+   </p>
+    <p>
+        Year
+        <!--<select ng-init="selectedName = year[0]" ng-model="selectedName" ng-options="x for x in year"  ng-change="getValue(selectedName)">-->
+         <select ng-model="selectedScrnName" ng-options="x for x in scrnYear"  ng-change="getVal(selectedScrnName)" >
+</select>
+    </p></td></tr>
+
+        <tr>
+
+
+
+        </tr>
+           <tr> <td>
+                <div style="height:400px;width:400px;">
 
         <canvas id="line" class="chart chart-line" chart-data="data"
 chart-labels="labels" chart-series="series" chart-options="options"
 chart-dataset-override="datasetOverride" chart-click="onClick">
 </canvas>
   </div>
+            </td>
+               <td style="width:200px;">&nbsp;&nbsp;&nbsp;</td>
+         <td> <div style="height:400px;width:400px;">
+
+        <canvas id="line2" class="chart chart-bar" chart-data="dataScrn"
+chart-labels="labelsScrn" chart-series="seriesScrn" chart-options="options"
+chart-dataset-override="datasetOverride" chart-click="onClick">
+</canvas>
+  </div></td>
+
+        </tr>
+    </table>
+
+<br/>
+
+
+
+<br/>
 
 
 </div>
