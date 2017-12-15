@@ -31,14 +31,17 @@ shieldService.getFeatures().then(function(data) {
         {
           var dataToSend  = {
 
-            feature_name : ["Web Cam Capture","Key Log"],
-            is_subscribed : ["false","false"]
              //u_id : $cookies.get('u_id'),
+             features:[{feature_name : "Web Cam Capture",is_subscribed : String($scope.checkboxModel.webcam)},
+                        {feature_name : "Key Log",is_subscribed :  String($scope.checkboxModel.scrnshot)},
+                        {feature_name : "Screenshot",is_subscribed :  String($scope.checkboxModel.keylog)},
+                        {feature_name : "Remote Lock",is_subscribed :  String($scope.checkboxModel.remotelock)},
+                        ]
            }
 
            shieldService.updateFeature(dataToSend).then(function (data) {
             console.log(data);
-           // ngToast.create('Subscription Updated!');
+            ngToast.create('Subscription Updated!');
         });
         }
 
