@@ -73,10 +73,10 @@ console.log("mymodel"+mymodel)
   };
 
 
-// $scope.gotoBottom = function() {
-//      console.log('methos is calles-------------------------'+$scope.text)
-//      $location.hash($scope.text);
-//      $anchorScroll();
-//    };
+ $scope.gotoBottom = function() {
+      console.log('methos is calles-------------------------'+$scope.text)
+     $location.hash($scope.text);
+      $anchorScroll();
+   };
 
 });

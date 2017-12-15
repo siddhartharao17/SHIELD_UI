@@ -4,86 +4,83 @@
 		<h4 class="modal-title">Chat</h4>
 	</div>
 	<div class="modal-body">
-    <!--<div ng-hide="!hideBasicInfo">-->
-        <!--support should see this-->
-        <!--<div class="col-sm-6 frame ">-->
-            <!--<ul >-->
+    <div ng-hide="!hideBasicInfo">
+        support should see this
+        <div class="col-sm-6 frame ">
+            <ul >
+                <perfect-scrollbar  class="scroller" wheel-speed="5" min-scrollbar-length="20">
+                <li style="width:100%" ng-repeat="u in userlist" >
+                    <div class="msj macro">
+                        <!--<div class="text text-l" >-->
+                            <p><b ng-bind="u"></b>
+
+                            <p><small>{{date | date:'hh:mm a'}}</small></p>
+                            <span ng-repeat="k in u">{{k}}</span>
+                                <b ng-bind="k">hi</b>
+
+                            <!--</div>-->
+
+                        </div>
+                    </li>
+                    </perfect-scrollbar>
+
+                </ul>
+             </div>
+
+    </div>
+         <div ng-hide="hideBasicInfo">
+
+
+
+        <form ng-submit="send()">
+<section id="chat-box" class="shield-chat">
+         <div class="col-sm-11 frame " style="height:300px;">
+            <ul >
                 <!--<perfect-scrollbar  class="scroller" wheel-speed="5" min-scrollbar-length="20">-->
-                <!--<li style="width:100%" ng-repeat="u in userlist" >-->
-                    <!--<div class="msj macro">-->
-                        <!--&lt;!&ndash;<div class="text text-l" >&ndash;&gt;-->
-                            <!--<p><b ng-bind="u"></b>-->
+                <li ng-repeat="msg in messages" >
 
-                            <!--<p><small>{{date | date:'hh:mm a'}}</small></p>-->
-                            <!--<span ng-repeat="k in u">{{k}}</span>-->
-                                <!--<b ng-bind="k">hi</b>-->
+                        <!--<div class="avatar"><img class="img-circle" style="width:60%;" src="/assets/icons/avatar.svg" /></div>-->
+                        <!--<div class="text text-l" >-->
+                   <div class="container"> <p><b ng-bind="msg.name" style="color:black"></b><b style="color:black">:</b></p>
+                            <p class="message mymessage"><span id={{msg.text}} ng-bind="msg.text"></span></p>
+                            <p class="time-right"><small>{{date | date:'hh:mm a'}}</small></p></div>
 
-                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--</div>-->
 
-                        <!--</div>-->
-                    <!--</li>-->
+
+                    </li>
                     <!--</perfect-scrollbar>-->
 
-                <!--</ul>-->
-             <!--</div>-->
+           </ul>
+             </div>
+</section>
+            <div>
 
-    <!--</div>-->
-         <!--<div ng-hide="hideBasicInfo">-->
-
-
-
-        <!--<form ng-submit="send()">-->
-<!--<section id="chat-box" class="clearfix">-->
-         <!--<div class="col-sm-11 frame ">-->
-            <!--<ul class="messages clearfix">-->
-                <!--&lt;!&ndash;<perfect-scrollbar  class="scroller" wheel-speed="5" min-scrollbar-length="20">&ndash;&gt;-->
-                <!--<li ng-repeat="msg in messages" >-->
-
-                        <!--&lt;!&ndash;<div class="avatar"><img class="img-circle" style="width:60%;" src="/assets/icons/avatar.svg" /></div>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<div class="text text-l" >&ndash;&gt;-->
-                            <!--<p><b ng-bind="msg.name" style="color:black"></b><b style="color:black">:</b>-->
-                            <!--<span id={{msg.text}} ng-bind="msg.text"></span></p>-->
-                            <!--<p><small>{{date | date:'hh:mm a'}}</small></p>-->
-
-                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <div class="col-xs-11" style="background:white;padding:0">
+                       <input type="text"  ng-model = "text"  size="30"  placeholder="Type a message">
+                    </div>
 
 
-                    <!--</li>-->
-                    <!--&lt;!&ndash;</perfect-scrollbar>&ndash;&gt;-->
+            </div>
 
-           <!--</ul>-->
-             <!--</div>-->
-<!--</section>-->
-            <!--<div>-->
+            <button class="btn btn-primary" type="submit"  value="Send" ng-click="gotoBottom()">Send</button>
+       </form>
+        <div class="wrapper" >
 
-                    <!--<div class="col-xs-11" style="background:white;padding:0">-->
-                       <!--<input type="text"  ng-model = "text"  size="30"  placeholder="Type a message">-->
-                    <!--</div>-->
-
-
-            <!--</div>-->
-
-            <!--<button class="btn btn-primary" type="submit"  value="Send" ng-click="gotoBottom()">Send</button>-->
-       <!--</form>-->
-        <!--<div class="wrapper" >-->
-
-         <!--<br />-->
-    <!--</div>-->
-    <!--</div>-->
-
-    <div class="shield-chat">
+         <br />
+    </div>
+    </div>
+<!-- to check below --->
+    <!--<div class="shield-chat">
         <div class="row">
             <p class="message">Hey!</p>
         </div>
         <div class="row">
             <p class="message myMessage">Whats Up?</p>
         </div>
-    </div>
-    </div>
-	<div class="modal-footer">
-        <input type="text" class="form-control" style="margin-bottom: 10px;">
-		<button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-		<button type="button" class="btn btn-primary">Send</button>
-	</div>
+    </div>-->
+     </div>
+
+
 </div>
 
