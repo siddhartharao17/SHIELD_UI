@@ -47,5 +47,9 @@ shieldService.getFeatures().then(function(data) {
 
 
     };
+$scope.dismiss = function(){
+        ngToast.create('Action Cancelled!');
+
+};
 
 });

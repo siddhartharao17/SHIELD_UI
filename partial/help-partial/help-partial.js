@@ -1,4 +1,4 @@
-angular.module('shield').controller('HelpPartialCtrl',function($scope){
+angular.module('shield').controller('HelpPartialCtrl',function($scope,$uibModal){
 
  $scope.help = [
         {text: 'Config Trouble? ', answer: 'You can either call 1800-Shield-11 , email to config@shield.com or use chat icon on the dashboard for live support'},
