@@ -29,7 +29,7 @@ shieldService.getFeatures().then(function(data) {
         }
         else
         {
-          /*var dataToSend  = {
+          var dataToSend  = {
 
             feature_name : ["Web Cam Capture","Key Log"],
             is_subscribed : ["false","false"]
@@ -38,8 +38,8 @@ shieldService.getFeatures().then(function(data) {
 
            shieldService.updateFeature(dataToSend).then(function (data) {
             console.log(data);
-            ngToast.create('Subscription Updated!');
-        });*/
+           // ngToast.create('Subscription Updated!');
+        });
         }
 
 
